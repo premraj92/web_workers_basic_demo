@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web workers demo</title>
+
+    <script src="./script.js" defer></script>
+
+    <style>
+        html {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        button {
+            margin-right: 1rem;
+            padding: 0.6em 1.2em;
+            background-color: chocolate ;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <button id="calculateSumBtn">Calculate SUM</button>
+    <button id="changePageBGBtn">Change Page Background</button>
+
+    <hr>
+    <h2>Web workers - basic Demo</h2>
+    <p>
+        This Basic APP shows the utility of the Web Workers when dealing with complex CPU intensive tasks like a comlpex arithmetic calculation which takes nearly a second or even a few seconds during which you can't do any other task & the execution context/call stack is stuck but where as creating a parallel thread that runs in the background along with the main thread which is what a webworker does is very useful for the app mainThread to offload that complex task to the Web worker with any neccesary input data & the worker can than finish the task/computation & return any result to the Main Thread of our app - this seamless communication between our Main thread & the worker thread is a core-feature of this Web_Worker concept
+    </p>
+
+    <ul>
+        <li>Web workers run parallel to your main thread & have their own EventLoop, can work independently of Main thread </li>
+        <li>One important thing to note about Web Workers is, it does not have access to DOM - it cannot access/manipulate anything in your page directly</li>
+        <li>Unlike Main Thread Web workers don't have access to Window or Document object of the browser</li>
+        <li>Web workers can be created in your main Javascript file by creating a instance of the Worker('path to the script file that contains Web workers logic') constructor of the Web Workers API interface</li>
+        <li>Communication between web workers is conducted via the Message Events or onmessage && postMessage methods to listen & emit MessageEvents respectively</li>
+    </ul>
+</body>
+</html>
